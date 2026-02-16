@@ -10,7 +10,7 @@ import Index from "./pages/Index";
 import MatchPage from "./pages/MatchPage";
 import NotFound from "./pages/NotFound";
 import AdminDashboard from "./pages/AdminDashboard";
-import AdminScanner from "./pages/AdminScanner";
+ 
 
 const queryClient = new QueryClient();
 
@@ -38,9 +38,7 @@ const App = () => {
             <Routes>
               <Route path="/" element={<Index />} />
               <Route path="/match/:id" element={<MatchPage />} />
-              <Route path="/admin" element={<AdminDashboard />} />
               <Route path="/admin-panel" element={<AdminDashboard />} />
-              <Route path="/admin/scanner" element={<AdminScanner />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </BrowserRouter>
