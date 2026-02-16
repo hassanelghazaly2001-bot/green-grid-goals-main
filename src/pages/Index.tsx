@@ -36,14 +36,15 @@ const Index = () => {
       <main className="container max-w-6xl mx-auto py-10">
         <TodaysMatchesSection />
       </main>
-      <footer className="container mx-auto py-6">
+      <footer className="container mx-auto py-6 flex items-center justify-end">
         <button
           type="button"
-          aria-label="hidden-access"
-          className="opacity-0 text-[11px] text-muted-foreground hover:opacity-100 transition"
+          aria-label="admin-access"
+          className="inline-flex items-center gap-2 rounded-md bg-emerald-600 px-3 py-1.5 text-xs font-semibold text-white shadow hover:bg-emerald-700"
           onClick={() => navigate("/admin-panel")}
         >
-          © DAWRINA 2026
+          <span aria-hidden>🔑</span>
+          <span>Admin</span>
         </button>
       </footer>
     </div>
