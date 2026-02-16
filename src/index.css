@@ -1,0 +1,140 @@
+@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&family=Tajawal:wght@400;500;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 220 20% 7%;
+    --foreground: 0 0% 95%;
+
+    --card: 220 18% 10%;
+    --card-foreground: 0 0% 95%;
+
+    --popover: 220 18% 10%;
+    --popover-foreground: 0 0% 95%;
+
+    --primary: 142 72% 50%;
+    --primary-foreground: 220 20% 7%;
+
+    --secondary: 220 16% 16%;
+    --secondary-foreground: 0 0% 90%;
+
+    --muted: 220 14% 14%;
+    --muted-foreground: 220 10% 55%;
+
+    --accent: 142 72% 50%;
+    --accent-foreground: 220 20% 7%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 220 14% 18%;
+    --input: 220 14% 18%;
+    --ring: 142 72% 50%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 220 18% 10%;
+    --sidebar-foreground: 0 0% 95%;
+    --sidebar-primary: 142 72% 50%;
+    --sidebar-primary-foreground: 220 20% 7%;
+    --sidebar-accent: 220 16% 16%;
+    --sidebar-accent-foreground: 0 0% 90%;
+    --sidebar-border: 220 14% 18%;
+    --sidebar-ring: 142 72% 50%;
+
+    --neon-glow: 0 0 20px hsl(142 72% 50% / 0.4), 0 0 40px hsl(142 72% 50% / 0.2);
+    --neon-glow-sm: 0 0 10px hsl(142 72% 50% / 0.3);
+    --card-shadow: 0 4px 24px hsl(0 0% 0% / 0.4);
+    --brand-highlight: 45 100% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply text-foreground antialiased;
+    font-family: "Cairo", "Tajawal", system-ui, -apple-system, BlinkMacSystemFont,
+      "Segoe UI", sans-serif;
+    background:
+      radial-gradient(circle at top left, #061a10 0, #000000 55%),
+      radial-gradient(circle at bottom right, #042814 0, #000000 60%);
+    background-attachment: fixed;
+  }
+}
+
+@layer utilities {
+  .neon-glow {
+    box-shadow: var(--neon-glow);
+  }
+  .neon-glow-sm {
+    box-shadow: var(--neon-glow-sm);
+  }
+  .neon-text {
+    text-shadow: 0 0 10px hsl(142 72% 50% / 0.5), 0 0 20px hsl(142 72% 50% / 0.3);
+  }
+  .card-elevated {
+    box-shadow: var(--card-shadow);
+  }
+  .news-ticker-track {
+    animation: ticker-scroll 35s linear infinite;
+  }
+}
+
+@keyframes ticker-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Video.js HLS quality selector – clean UI aligned with app theme */
+.video-player-container .vjs-quality-selector .vjs-menu-button .vjs-menu .vjs-menu-content {
+  background-color: hsl(var(--card));
+  border: 1px solid hsl(var(--border));
+  border-radius: var(--radius);
+  padding: 0.25rem 0;
+  min-width: 7rem;
+  box-shadow: var(--card-shadow);
+}
+
+.video-player-container .vjs-quality-selector .vjs-menu-button:hover .vjs-menu,
+.video-player-container .vjs-quality-selector .vjs-menu-button .vjs-menu.vjs-lock-showing {
+  display: block;
+}
+
+.video-player-container .vjs-quality-selector .vjs-menu li {
+  padding: 0.4rem 0.75rem;
+  font-size: 0.8125rem;
+  color: hsl(var(--foreground));
+  text-transform: none;
+}
+
+.video-player-container .vjs-quality-selector .vjs-menu li:hover,
+.video-player-container .vjs-quality-selector .vjs-menu li.vjs-selected {
+  background-color: hsl(var(--primary) / 0.2);
+  color: hsl(var(--primary-foreground));
+}
+
+.video-player-container .vjs-quality-selector .vjs-menu li.vjs-selected::before {
+  content: "✓ ";
+  color: hsl(var(--primary));
+  font-weight: 600;
+}
+
+.video-player-container .vjs-quality-selector .vjs-menu-button .vjs-menu-button-popup .vjs-menu .vjs-menu-title {
+  padding: 0.4rem 0.75rem;
+  font-size: 0.75rem;
+  color: hsl(var(--muted-foreground));
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-bottom: 1px solid hsl(var(--border));
+  margin-bottom: 0.25rem;
+}
