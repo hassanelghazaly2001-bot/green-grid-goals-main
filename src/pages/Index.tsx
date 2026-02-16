@@ -1,6 +1,8 @@
 import { TodaysMatchesSection } from "@/components/TodaysMatchesSection";
+import { useNavigate } from "react-router-dom";
 
 const Index = () => {
+  const navigate = useNavigate();
   return (
     <div className="min-h-screen bg-background">
       {/* Header */}
@@ -34,6 +36,16 @@ const Index = () => {
       <main className="container max-w-6xl mx-auto py-10">
         <TodaysMatchesSection />
       </main>
+      <footer className="container mx-auto py-6">
+        <button
+          type="button"
+          aria-label="hidden-access"
+          className="opacity-0 text-[11px] text-muted-foreground hover:opacity-100 transition"
+          onClick={() => navigate("/admin-panel")}
+        >
+          © DAWRINA 2026
+        </button>
+      </footer>
     </div>
   );
 };

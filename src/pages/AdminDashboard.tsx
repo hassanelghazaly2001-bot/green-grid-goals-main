@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { t } from "@/lib/i18n";
 import type { Match } from "@/data/matches";
 import { Star } from "lucide-react";
@@ -75,6 +75,7 @@ const AdminDashboard = () => {
     channelSlug: "",
     backupIframe: "",
   });
+  const navigate = useNavigate();
 
  
 
@@ -592,6 +593,15 @@ const AdminDashboard = () => {
           <div className="mb-3 flex items-center justify-between">
             <h2 className="text-sm font-semibold text-foreground">لوحة الإدارة</h2>
             <span className="text-xs text-muted-foreground">Feb 14, 2026</span>
+          </div>
+          <div className="mb-4">
+            <button
+              type="button"
+              onClick={() => navigate("/")}
+              className="rounded-md bg-muted px-3 py-1.5 text-xs font-medium text-foreground hover:bg-muted/70"
+            >
+              الرجوع إلى الصفحة الرئيسية
+            </button>
           </div>
           {autoStatus && <p className="mb-3 text-xs text-muted-foreground">{autoStatus}</p>}
           <div className="mb-4 flex items-center gap-2">
