@@ -9,10 +9,8 @@ import { AppErrorBoundary } from "@/components/AppErrorBoundary";
 import Index from "./pages/Index";
 import MatchPage from "./pages/MatchPage";
 import NotFound from "./pages/NotFound";
-import AdminStreams from "./pages/AdminStreams";
 import AdminDashboard from "./pages/AdminDashboard";
 import AdminScanner from "./pages/AdminScanner";
-import AdminDashboard from "./pages/AdminDashboard";
 
 const queryClient = new QueryClient();
 
@@ -40,7 +38,6 @@ const App = () => {
             <Routes>
               <Route path="/" element={<Index />} />
               <Route path="/match/:id" element={<MatchPage />} />
-              <Route path="/admin-streams" element={<AdminStreams />} />
               <Route path="/admin" element={<AdminDashboard />} />
               <Route path="/admin-panel" element={<AdminDashboard />} />
               <Route path="/admin/scanner" element={<AdminScanner />} />
