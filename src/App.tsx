@@ -19,10 +19,18 @@ const AdminAccessButton = () => {
   return (
     <button
       type="button"
+      style={{
+        position: "fixed",
+        bottom: "20px",
+        right: "20px",
+        zIndex: 9999,
+        background: "red",
+        color: "white",
+        padding: "15px",
+      }}
       onClick={() => navigate("/admin-panel")}
-      className="fixed top-5 left-5 z-[9999] bg-red-600 text-white px-3 py-2 rounded-md shadow hover:bg-red-700"
     >
-      Admin
+      ADMIN ACCESS
     </button>
   );
 };
