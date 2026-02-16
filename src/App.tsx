@@ -21,8 +21,8 @@ const AdminAccessButton = () => {
       type="button"
       style={{
         position: "fixed",
-        bottom: "20px",
-        right: "20px",
+        top: "20px",
+        left: "20px",
         zIndex: 9999,
         background: "red",
         color: "white",
